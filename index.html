@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Restoran Nusantara</title>
+    
+    <style>
+        /* CSS LAYOUT (Sesuai Poin B.4 Soal UAS) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        /* BANNER & HERO SECTION (Poin B.3) */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                    url(WhatsApp\ Image\ 2025-12-27\ at\ 15.28.31.jpeg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fdbb2d;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fdbb2d;
+        }
+
+        /* KONTEN HOME */
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+
+        
+        
+ .btn-utama {
+            background-color: #fdbb2d;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-utama:hover { background-color:#fdbb2d; }
+       
+
+#teks-ucapan {
+    display: inline;
+    color: white; 
+    margin-left: 10px;
+}
+
+#ikon-waktu {
+    font-size: 30px;
+}
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">RESTO KITA</a>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="iya2.html">MENU</a>
+            <a href="reservasi.html">RESERVASI</a>
+            <a href="kontak.html">CONTACT</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Cita Rasa Nusantara</h1>
+        <p>Nikmati hidangan tradisional dengan sentuhan modern yang memanjakan lidah Anda. Bahan segar, bumbu otentik, suasana hangat.</p>
+        <a href="iya2.html">
+        <button class="btn-utama" onclick="kehalamanproduk">Klik disini!</button>
+        </a>
+        <div class="ucapan-container">
+    <span id="ikon-waktu"></span>
+    <h2 id="teks-ucapan"></h2>
+</div>
+    </section>
+
+<script>
+    function updateUcapan() {
+        const jam = new Date().getHours();
+        let ucapan = "";
+        let ikon = "";
+
+        if (jam >= 5 && jam < 11) {
+            ucapan = "Selamat Pagi!";
+            ikon = "☀️";
+        } else if (jam >= 11 && jam < 15) {
+            ucapan = "Selamat Siang!";
+            ikon = "☀️";
+        } else if (jam >= 15 && jam < 18) {
+            ucapan = "Selamat Sore!";
+            ikon = "⛅";
+        } else {
+            ucapan = "Selamat Malam!";
+            ikon = "🌙"; // Ikon bulan buat "turu boss"
+        }
+
+        document.getElementById("teks-ucapan").innerHTML = ucapan;
+        document.getElementById("ikon-waktu").innerHTML = ikon;
+    }
+
+    updateUcapan();
+</script>
+    <footer>
+        <p>Copyright &copy; 2026 | Nama: <b>RAFELINA KEISYA</b> | NIM: <b>251011700950</b> | Kelas: <b>01SIFPO13</b></p>
+    </footer>
+
+    
+
+</body>
+</html>
